@@ -1,3 +1,4 @@
+const http = require('http')
 const {isCelebrateError } = require('celebrate')
 const cors = require('cors')
 const helmet = require('helmet')
@@ -46,6 +47,7 @@ app.get('/', (req, res) => {
   
 
 const port = process.env.PORT || 5000
-app.listen(port, ()=>{
+const server = http.createServer(app)
+server.listen(port, ()=>{
     console.log(`server is listening on port ${port} `)
 })
