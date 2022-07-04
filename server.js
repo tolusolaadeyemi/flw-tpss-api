@@ -11,9 +11,9 @@ const { validateTransactionObject } = require('./controllers/splitValidator')
 require('dotenv').config()
 
 
-// app.use(morgan('dev'))
+app.use(morgan('dev'))
 app.use(cors())
-// app.use(helmet())
+app.use(helmet())
 // middleware to parse json
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
